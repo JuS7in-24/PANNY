@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang chủ - PANNY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pacifico', cursive;
+      background-color: #f5f1eb;
+      position: relative;
+      overflow: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(245, 241, 235, 0.6);
+      z-index: 0;
+    }
+    video.background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+    header, footer {
+      background-color: #d8bfa2;
+      text-align: center;
+      padding: 20px;
+      color: white;
+      position: relative;
+      z-index: 1;
+      font-size: 2.5em;
+    }
+    nav {
+      background-color: #e8d9c4;
+      padding: 10px 0;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #5b4b3a;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      color: #5b4b3a;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+<video autoplay loop playsinline class="background-video">
+  <source src="https://v1.pinimg.com/videos/iht/hls/ca/3f/09/ca3f094d7edcd1d90e605b94d3aaf29b.m3u8" type="application/x-mpegURL">
+</video>
+<header>
+  PANNY
+</header>
+<nav>
+  <a href="trangchu.html">Trang chủ</a>
+  <a href="sanpham.html">Sản phẩm</a>
+  <a href="giohang.html">Giỏ hàng</a>
+  <a href="thanhtoan.html">Thanh toán</a>
+  <a href="lienhe.html">Liên hệ</a>
+</nav>
+<div class="hero">
+  <h1>Chào mừng đến với PANNY!</h1>
+  <p>Nơi bạn tìm thấy những chiếc túi hoa xinh xắn, đáng yêu và đầy phong cách 💐</p>
+  <p>Chúng mình tin rằng từng chi tiết nhỏ đều mang lại yêu thương.</p>
+</div>
+<footer>
+  © 2025 Panny - Yêu thương đến từ chi tiết <3
+</footer>
+</body>
+</html>

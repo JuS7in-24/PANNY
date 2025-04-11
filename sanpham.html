@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sản phẩm - PANNY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pacifico', cursive;
+      background-color: #f5f1eb;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('https://i.pinimg.com/736x/48/02/19/480219046757dd01bbe21d9f8bb4d166.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5;
+      z-index: -1;
+    }
+    header, footer {
+      background-color: #d8bfa2;
+      text-align: center;
+      padding: 20px;
+      color: white;
+    }
+    nav {
+      background-color: #e8d9c4;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #5b4b3a;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    h1 {
+      text-align: center;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      background-color: #fff7ef;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      text-align: center;
+      padding: 15px;
+      font-family: 'Patrick Hand', cursive;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .add-to-cart {
+      margin-top: 10px;
+      background-color: #d8bfa2;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      font-family: 'Patrick Hand', cursive;
+    }
+    .add-to-cart:hover {
+      background-color: #c3a88e;
+    }
+  </style>
+  <script>
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      window.location.href = 'giohang.html';
+    }
+  </script>
+</head>
+<body>
+<header>
+  <h1 style="font-size: 2.5em;">PANNY</h1>
+</header>
+<nav>
+  <a href="trangchu.html">Trang chủ</a>
+  <a href="sanpham.html">Sản phẩm</a>
+  <a href="giohang.html">Giỏ hàng</a>
+  <a href="thanhtoan.html">Thanh toán</a>
+  <a href="lienhe.html">Liên hệ</a>
+</nav>
+<h1>Danh sách sản phẩm</h1>
+<div class="product-grid">
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/9a/6c/80/9a6c807ba983a8b84d28fb14e7957e1d.jpg" alt="Túi pastel nơ vàng">
+    <h3>Túi pastel nơ vàng</h3>
+    <p>155.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi pastel nơ vàng', 155000)">Thêm vào giỏ hàng</button>
+  </div>
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/95/36/c3/9536c303c107e4907927b9e209d8f45f.jpg" alt="Túi bánh kem nơ hồng">
+    <h3>Túi bánh kem nơ hồng</h3>
+    <p>160.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi bánh kem nơ hồng', 160000)">Thêm vào giỏ hàng</button>
+  </div>
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/2d/a2/4a/2da24a6d88960b34df0f6770a39c9dd9.jpg" alt="Túi nơ xanh pastel">
+    <h3>Túi nơ xanh pastel</h3>
+    <p>150.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi nơ xanh pastel', 150000)">Thêm vào giỏ hàng</button>
+  </div>
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/12/fc/ae/12fcae8f916d1089277cf4e06930892f.jpg" alt="Túi đeo chéo gấu hồng">
+    <h3>Túi đeo chéo gấu hồng</h3>
+    <p>170.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi đeo chéo gấu hồng', 170000)">Thêm vào giỏ hàng</button>
+  </div>
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/ac/6f/5b/ac6f5bc660876deeb28226119c7d9ef7.jpg" alt="Túi pastel trái tim">
+    <h3>Túi pastel trái tim</h3>
+    <p>165.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi pastel trái tim', 165000)">Thêm vào giỏ hàng</button>
+  </div>
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/f0/20/56/f020567d1a013c7e14705ed262cc6894.jpg" alt="Túi dâu tây cute">
+    <h3>Túi dâu tây cute</h3>
+    <p>145.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi dâu tây cute', 145000)">Thêm vào giỏ hàng</button>
+  </div>
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/55/23/23/5523232e275fc53cc2c599b314921196.jpg" alt="Túi dây kéo dễ thương">
+    <h3>Túi dây kéo dễ thương</h3>
+    <p>135.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi dây kéo dễ thương', 135000)">Thêm vào giỏ hàng</button>
+  </div>
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/97/93/6b/97936b4ac047e8a91cc6de4e4b33fa39.jpg" alt="Túi thỏ trắng dễ thương">
+    <h3>Túi thỏ trắng dễ thương</h3>
+    <p>180.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi thỏ trắng dễ thương', 180000)">Thêm vào giỏ hàng</button>
+  </div>
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/c7/4e/45/c74e453ba9661dc23edaaddf63d81498.jpg" alt="Túi pastel nơ nâu">
+    <h3>Túi pastel nơ nâu</h3>
+    <p>155.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi pastel nơ nâu', 155000)">Thêm vào giỏ hàng</button>
+  </div>
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/fc/bd/96/fcbd96e0497ffaafea4aec142a762bba.jpg" alt="Túi gấu nâu cổ điển">
+    <h3>Túi gấu nâu cổ điển</h3>
+    <p>160.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi gấu nâu cổ điển', 160000)">Thêm vào giỏ hàng</button>
+  </div>
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/be/46/cb/be46cb493654608ae2f6f3c98ca6df38.jpg" alt="Túi đeo tim pastel">
+    <h3>Túi đeo tim pastel</h3>
+    <p>150.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi đeo tim pastel', 150000)">Thêm vào giỏ hàng</button>
+  </div>
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/8f/4e/9c/8f4e9c4beaa25261071c19ce0a37dfb7.jpg" alt="Túi gấu viền lông">
+    <h3>Túi gấu viền lông</h3>
+    <p>175.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi gấu viền lông', 175000)">Thêm vào giỏ hàng</button>
+  </div>
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/24/01/88/240188d7f90a4e6e4b82f4026b565a54.jpg" alt="Túi tai thỏ tím">
+    <h3>Túi tai thỏ tím</h3>
+    <p>160.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi tai thỏ tím', 160000)">Thêm vào giỏ hàng</button>
+  </div>
+  <div class="product">
+    <img src="https://i.pinimg.com/736x/ba/b5/bd/bab5bde531077b85444750e4ed778ec2.jpg" alt="Túi kem dâu pastel">
+    <h3>Túi kem dâu pastel</h3>
+    <p>140.000đ</p>
+    <button class="add-to-cart" onclick="addToCart('Túi kem dâu pastel', 140000)">Thêm vào giỏ hàng</button>
+  </div>
+</div>
+<footer>
+  © 2025 PANNY - Yêu thương đến từ chi tiết <3
+</footer>
+</body>
+</html>
+

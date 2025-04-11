@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh toán - PANNY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pacifico', cursive;
+      background-color: #f5f1eb;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('https://i.pinimg.com/736x/5c/ba/0a/5cba0ae412c3f8d1e85b1631076dc620.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5;
+      z-index: -1;
+    }
+    header, footer {
+      background-color: #d8bfa2;
+      text-align: center;
+      padding: 20px;
+      color: white;
+    }
+    nav {
+      background-color: #e8d9c4;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #5b4b3a;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .checkout {
+      padding: 20px;
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #fff7ef;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    .checkout h2 {
+      text-align: center;
+    }
+    .checkout label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    .checkout input, .checkout textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: Arial, sans-serif;
+    }
+    .checkout button {
+      background-color: #d8bfa2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<header>
+  PANNY
+</header>
+<nav>
+  <a href="trangchu.html">Trang chủ</a>
+  <a href="sanpham.html">Sản phẩm</a>
+  <a href="giohang.html">Giỏ hàng</a>
+  <a href="thanhtoan.html">Thanh toán</a>
+  <a href="lienhe.html">Liên hệ</a>
+</nav>
+<div class="checkout">
+  <h2>Thông tin thanh toán</h2>
+  <form>
+    <label for="name">Họ và tên</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="address">Địa chỉ</label>
+    <input type="text" id="address" name="address" required>
+
+    <label for="phone">Số điện thoại</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="note">Ghi chú</label>
+    <textarea id="note" name="note"></textarea>
+
+    <button type="submit">Xác nhận thanh toán</button>
+  </form>
+</div>
+<footer>
+  © 2025 PANNY - Yêu thương đến từ chi tiết <3
+</footer>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ hàng - PANNY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Patrick Hand', cursive;
+      background-color: #fff7f0;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background-color: #d8bfa2;
+      text-align: center;
+      padding: 20px;
+      color: white;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .cart-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+    .cart-item img {
+      width: 80px;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+    .cart-item-info {
+      flex-grow: 1;
+    }
+    .total {
+      text-align: right;
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+    .checkout-btn {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background-color: #d8bfa2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    .checkout-btn:hover {
+      background-color: #c3a88e;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Giỏ hàng của bạn</h1>
+</header>
+<div class="cart-container" id="cartContainer">
+  <!-- Sản phẩm sẽ được thêm vào đây bằng JavaScript -->
+</div>
+<div class="total" id="totalPrice">Tổng cộng: 0đ</div>
+<button class="checkout-btn" onclick="window.location.href='thanhtoan.html'">Thanh toán</button>
+<footer>
+  © 2025 PANNY - Yêu thương đến từ chi tiết <3
+</footer>
+
+<script>
+  const productImages = {
+    "Túi pastel nơ vàng": "https://i.pinimg.com/736x/9a/6c/80/9a6c807ba983a8b84d28fb14e7957e1d.jpg",
+    "Túi bánh kem nơ hồng": "https://i.pinimg.com/736x/95/36/c3/9536c303c107e4907927b9e209d8f45f.jpg",
+    "Túi nơ xanh pastel": "https://i.pinimg.com/736x/2d/a2/4a/2da24a6d88960b34df0f6770a39c9dd9.jpg",
+    "Túi đeo chéo gấu hồng": "https://i.pinimg.com/736x/12/fc/ae/12fcae8f916d1089277cf4e06930892f.jpg",
+    "Túi pastel trái tim": "https://i.pinimg.com/736x/ac/6f/5b/ac6f5bc660876deeb28226119c7d9ef7.jpg",
+    "Túi dâu tây cute": "https://i.pinimg.com/736x/f0/20/56/f020567d1a013c7e14705ed262cc6894.jpg",
+    "Túi dây kéo dễ thương": "https://i.pinimg.com/736x/55/23/23/5523232e275fc53cc2c599b314921196.jpg",
+    "Túi thỏ trắng dễ thương": "https://i.pinimg.com/736x/97/93/6b/97936b4ac047e8a91cc6de4e4b33fa39.jpg",
+    "Túi pastel nơ nâu": "https://i.pinimg.com/736x/c7/4e/45/c74e453ba9661dc23edaaddf63d81498.jpg",
+    "Túi gấu nâu cổ điển": "https://i.pinimg.com/736x/fc/bd/96/fcbd96e0497ffaafea4aec142a762bba.jpg",
+    "Túi đeo tim pastel": "https://i.pinimg.com/736x/be/46/cb/be46cb493654608ae2f6f3c98ca6df38.jpg",
+    "Túi gấu viền lông": "https://i.pinimg.com/736x/8f/4e/9c/8f4e9c4beaa25261071c19ce0a37dfb7.jpg",
+    "Túi tai thỏ tím": "https://i.pinimg.com/736x/24/01/88/240188d7f90a4e6e4b82f4026b565a54.jpg",
+    "Túi kem dâu pastel": "https://i.pinimg.com/736x/ba/b5/bd/bab5bde531077b85444750e4ed778ec2.jpg"
+  };
+
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const container = document.getElementById('cartContainer');
+  let total = 0;
+
+  cart.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+
+    const img = document.createElement('img');
+    img.src = productImages[item.name] || '';
+    img.alt = item.name;
+
+    const info = document.createElement('div');
+    info.className = 'cart-item-info';
+    info.innerHTML = `<strong>${item.name}</strong><br>${item.price.toLocaleString()}đ`;
+
+    div.appendChild(img);
+    div.appendChild(info);
+    container.appendChild(div);
+
+    total += item.price;
+  });
+
+  document.getElementById('totalPrice').innerText = `Tổng cộng: ${total.toLocaleString()}đ`;
+</script>
+</body>
+</html>
