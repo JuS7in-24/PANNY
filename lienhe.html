@@ -1,88 +1,174 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liên hệ - PANNY</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Pacifico', cursive;
-      background-color: #f5f1eb;
-    }
-    header, footer {
-      background-color: #d8bfa2;
-      text-align: center;
-      padding: 20px;
-      color: white;
-    }
-    nav {
-      background-color: #e8d9c4;
-      padding: 10px 0;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #5b4b3a;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .contact {
-      max-width: 500px;
-      margin: 20px auto;
-      background-color: #fff7ef;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
-    }
-    .contact label {
-      display: block;
-      margin: 10px 0 5px;
-    }
-    .contact input, .contact textarea {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-family: Arial, sans-serif;
-    }
-    .contact button {
-      background-color: #d8bfa2;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 1em;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - PANNY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Pacifico', cursive;
+            background-color: #f5f1eb;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('https://i.pinimg.com/originals/1a/65/e1/1a65e12e8215d41fcee597d1795bd53a.jpg'); /* Đặt hình nền */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5; /* Độ mờ 50% */
+            z-index: -1;
+        }
+        header, footer {
+            background-color: #d8bfa2;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 2.5em;
+        }
+        nav {
+            background-color: #e8d9c4;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #5b4b3a;
+            font-weight: bold;
+            font-size: 1.2em;
+            border-radius: 5px;
+            padding: 8px 12px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            text-decoration: none;
+            background-color: #d8bfa2;
+            color: white;
+        }
+        .contact-banner {
+            text-align: center;
+            padding: 30px 20px;
+            color: #5b4b3a;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-banner h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: #fff7ef;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+            font-size: 1.1em;
+        }
+        .contact-info h2 {
+            text-align: center;
+            font-size: 2em;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        .contact-info a {
+            color: #5b4b3a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 20px 30px;
+            position: relative;
+            z-index: 1;
+        }
+        .image-gallery img {
+            width: calc(33.33% - 20px);
+            max-width: 150px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Thêm transition */
+        }
+        .image-gallery img:hover {
+            transform: scale(1.1); /* Phóng to ảnh khi rê chuột */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ đậm hơn */
+            cursor: pointer; /* Thay đổi con trỏ chuột */
+        }
+        @media (max-width: 768px) {
+            .image-gallery img {
+                width: calc(50% - 10px);
+                max-width: 120px;
+            }
+        }
+        @media (max-width: 480px) {
+            .image-gallery img {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        footer {
+            background-color: #d8bfa2;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 30px;
+            font-size: 1em;
+        }
+    </style>
 </head>
 <body>
-<header>
-  PANNY
-</header>
-<nav>
-  <a href="trangchu.html">Trang chủ</a>
-  <a href="sanpham.html">Sản phẩm</a>
-  <a href="giohang.html">Giỏ hàng</a>
-  <a href="thanhtoan.html">Thanh toán</a>
-  <a href="lienhe.html">Liên hệ</a>
-</nav>
-<div class="contact-info">
-  <h2>Liên hệ PANNY</h2>
-  <p>📞 Số điện thoại: <a href="tel:0909999999">0909 999 999</a></p>
-  <p>📸 Instagram: <a href="https://instagram.com/panny" target="_blank">@panny</a></p>
-  <p>🎵 TikTok: <a href="https://tiktok.com/@panny" target="_blank">@panny</a></p>
-  <p>📘 Facebook: <a href="https://facebook.com/panny" target="_blank">facebook.com/panny</a></p>
-</div>
-<footer>
-  © 2025 PANNY - Yêu thương đến từ chi tiết <3
-</footer>
+    <header>
+        PANNY
+    </header>
+    <nav>
+        <a href="trangchu.html">Trang chủ</a>
+        <a href="sanpham.html">Sản phẩm</a>
+        <a href="giohang.html">Giỏ hàng</a>
+        <a href="thanhtoan.html">Thanh toán</a>
+        <a href="lienhe.html">Liên hệ</a>
+    </nav>
+
+    <div class="contact-banner">
+        <h2>Liên hệ chúng tớ để nhận được thông báo về sản phẩm mới nhất nhé</h2>
+    </div>
+
+    <div class="image-gallery">
+        <img src="https://i.pinimg.com/736x/b0/7b/be/b07bbe8339cadc1f35559c08e4741334.jpg" alt="Hình ảnh sản phẩm 1">
+        <img src="https://i.pinimg.com/736x/4f/0d/eb/4f0deb45eb2b60c7d89a74069dfb5ca8.jpg" alt="Hình ảnh sản phẩm 2">
+        <img src="https://i.pinimg.com/736x/a0/68/6a/a0686af49932fa2902244482a9da07f7.jpg" alt="Hình ảnh sản phẩm 3">
+        <img src="https://i.pinimg.com/736x/0c/95/f2/0c95f2bbebc2f10215777ee4fe00589a.jpg" alt="Hình ảnh sản phẩm 4">
+        <img src="https://i.pinimg.com/736x/8e/62/a2/8e62a23102bfc1e8344e19d41f210aa1.jpg" alt="Hình ảnh sản phẩm 5">
+        <img src="https://i.pinimg.com/736x/85/eb/89/85eb89cbc2bb47fb2761b45d654c111a.jpg" alt="Hình ảnh sản phẩm 6">
+        <img src="https://i.pinimg.com/736x/11/d8/47/11d8472eb340e5109317690e6929ba4d.jpg" alt="Hình ảnh sản phẩm 7">  <img src="https://i.pinimg.com/736x/80/f7/fc/80f7fc5686e5eee5db913163e099eaed.jpg" alt="Hình ảnh sản phẩm 8">  <img src="https://i.pinimg.com/736x/80/3b/94/803b94c378f90335785247145067feb6.jpg" alt="Hình ảnh sản phẩm 9">  <img src="https://i.pinimg.com/736x/7c/ae/8b/7cae8bdf3443695e5498e39a234d3b29.jpg" alt="Hình ảnh sản phẩm 10"> </div>
+
+    <div class="contact-info">
+        <h2>Liên hệ PANNY</h2>
+        <p>📞 Số điện thoại: <a href="tel:0909999999">0909 999 999</a></p>
+        <p>📸 Instagram: <a href="https://instagram.com/panny" target="_blank">@panny</a></p>
+        <p>🎵 TikTok: <a href="https://tiktok.com/@panny" target="_blank">@panny</a></p>
+        <p>📘 Facebook: <a href="https://facebook.com/panny" target="_blank">facebook.com/panny</a></p>
+        <p>🏢 Địa chỉ: <a href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+THPT+Ph%C3%BA+Nhu%E1%BA%ADn/data=!4m2!3m1!1s0x0:0x9477c59be3b86628?sa=X&ved=1t:2428&ictx=111" target="_blank">Số 5 Hoàng Minh Giám, Phường 9, Quận Phú Nhuận, TPHCM</a></p>
+    </div>
+
+    <footer>
+        © 2025 PANNY - Yêu thương đến từ chi tiết <3
+    </footer>
 </body>
 </html>
+
+
